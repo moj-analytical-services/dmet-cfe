@@ -5,10 +5,11 @@ paginate: true
 _paginate: skip
 ---
 
-# [DMET Enablement Team](https://github.com/moj-analytical-services/dmet-coe)
+# [DMET Centre for Excellence](https://github.com/moj-analytical-services/dmet-cfe)
 
 ## [MoJ Analytical Platform](https://user-guidance.analytical-platform.service.justice.gov.uk/#content)
 
+### :warning: Work in Progress
 
 <style scoped>
 section {
@@ -19,19 +20,64 @@ section {
 
 ---
 
-# What is the Enablement Team?
+<style scoped>
+section {
+  columns: 4;
+  display: block;
+}
+h1 {
+  column-span: all;
+}
+h3 {
+  break-before: column;
+}
+p {
+  font-size: 25px;
+}
+</style>
 
-Formed within the Data Modelling and Engineering team to help domain teams evaluate, build, adopt and promote strategic solutions.
+# Problem Statement
 
-- :sos: We are need-driven: The work we do will answer specific problems our domain teams and their partners face.
+### :warning: Problem
+The Data Engineering tool stack is fragmented by domain
 
-- :hourglass_flowing_sand: We have a rotational membership: The enablement team will collaborate with the relevant domain team(s) for the duration of the project.
+There is minimal cross-cutting oversight
 
-- :busts_in_silhouette: We cross team boundaries: Where problems impact or require a cross-cutting solution we will consult across domains and professions.
+We have little visibility on the health of our data pipelines
 
+### :moneybag: Impact
+Duplication of effort
+
+Hinders mobility between domains
+
+We spot problems too late
+
+More fragmentation as teams resort to quick-fixes
+
+### :compass: Context 
+Generic solutions require cross-cutting technical and domain knowledge 
+
+Generic solutions are more complex and take longer to build
+
+### :bulb: Opportunity
+Generic solutions are more sustainable in the long-term
+
+Supporting domains to develop cross-cutting solutions, starting with monitoring, presents a strategic opportunity
 
 ---
+# What is the Centre for Excellence?
 
+Enables domain teams to evaluate, build, adopt and promote cross-cutting solutions.
+
+- :sos: We are need-driven: We prioritise addressing immediate challenges faced by domain teams and their partners.
+
+- :hourglass_flowing_sand: We have a rotational membership: We collaborate with the relevant domain team(s) for the duration of the project.
+
+- :busts_in_silhouette: We cross team boundaries: We consult and advocate across domains and professions.
+
+- :handshake: We deliver through others: We provide technical oversight, coaching and share good practice. Upon completion, we hand over assets to domain or platform teams.
+
+---
 # Modes of Interaction
 
 ![modes_of_interactions](images/modes_of_interaction.excalidraw.png)
