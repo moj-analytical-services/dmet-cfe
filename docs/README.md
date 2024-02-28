@@ -31,9 +31,6 @@ h1 {
 h3 {
   break-before: column;
 }
-p {
-  font-size: 25px;
-}
 </style>
 
 # Problem Statement
@@ -67,15 +64,17 @@ Supporting domains to develop cross-cutting solutions, starting with monitoring,
 ---
 # What is the Centre for Excellence?
 
-Enables domain teams to evaluate, build, adopt and promote cross-cutting solutions.
+##### Enables domain teams to evaluate, build, adopt and promote cross-cutting solutions.
 
-- :sos: We are need-driven: We prioritise addressing immediate challenges faced by domain teams and their partners.
+- :sos: Need-driven: We prioritise addressng immediate challenges faced by domain teams and their partners
 
-- :hourglass_flowing_sand: We have a rotational membership: We collaborate with the relevant domain team(s) for the duration of the project.
+- :eyes: Innovative: We stay abreast of developments in data and analytics engineering and their potential for improving our tech stack
 
-- :busts_in_silhouette: We cross team boundaries: We consult and advocate across domains and professions.
+- :hourglass_flowing_sand: Rotational membership: We collaborate with domain team(s) for the duration of the project
 
-- :handshake: We deliver through others: We provide technical oversight, coaching and share good practice. Upon completion, we hand over assets to domain or platform teams.
+- :busts_in_silhouette: Cross-cutting: We consult and advocate across domains and professions
+
+- :handshake: Delivery through others: We provide technical oversight, coaching and share good practice. Upon completion, we hand over assets to domain or platform teams
 
 ---
 # Modes of Interaction
@@ -87,17 +86,15 @@ section {
   text-align: left;
   justify-content: flex-start;
 }
-a, h1, h2, h5 {
+a, h1, h2 {
   color: #1d70b8;
 }
 a {
   text-decoration: underline;
 }
-/* img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-} */
+p {
+  font-size: 25px;
+}
 table {
   margin-left: auto;
   margin-right: auto;
