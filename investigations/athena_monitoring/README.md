@@ -1,43 +1,32 @@
 ---
 marp: true
-theme: default
+theme: moj
 paginate: true
 _paginate: skip
+_class: title
+footer: ![image w:40](/theme/moj.png)
+_footer: ''
 ---
-<style scoped>
-section {
-  background-color: #1c619d;
-  color: #ffffff;
-}
-a,h2 {
-  color: #ffffff;
-}
-</style>
 
-<img src="https://www.childrenslegalcentre.com/wp-content/uploads/2018/08/MoJ-logo.jpg" width="150px">
+![w:200](/theme/moj.png)
 
-# [Monitoring Athena and Data Access](https://github.com/moj-analytical-services/dmet-cfe)
+# [Monitoring Athena and Data Access](https://github.com/moj-analytical-services/dmet-cfe/tree/main/investigations/athena_monitoring)
 
 ## Centre for Excellence
 
-## July 2024 
+##### July 2024 
 
 ---
-<style scoped>
-section {
-  justify-content: flex-start;
-  text-align: center;
-}
-</style>
-
+<!-- _class: centerTextAlign -->
 
 ## Why monitor Athena?
 
-![bg 80%](./images/athena_costs.png)
+![w:1000px](./images/athena_costs.png)
 
 ---
+<!-- _class: centerTextAlign -->
 
-![athena monitoring mindmap](./images/athena_monitoring_mindmap.excalidraw.png)
+![athena monitoring mindmap w:1000px](./images/athena_monitoring_mindmap.excalidraw.png)
 
 ---
 
@@ -68,6 +57,7 @@ section {
 - ### NLP of Athena queries :arrow_right: :question:
 
 ---
+
 <style scoped>
 section {
   justify-content: flex-end;
@@ -76,46 +66,28 @@ section {
 
 ## [Amazon CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_architecture.html)
 
-#### What is happening on AWS?
+### What is happening on AWS?
 
 ![bg 70%](https://docs.aws.amazon.com/images/AmazonCloudWatch/latest/monitoring/images/CW-Overview.png)
 
 ---
-<style scoped>
-section {
-  background-color: #1c619d;
-  color: #ffffff;
-}
-h1 {
-  color: #ffffff;
-}
-</style>
+<!-- _class: title -->
 
 # CloudWatch Demo
 
-Athena Workgroup Metrics
+### Athena Workgroup Metrics
 
 ---
 ## AWS CloudTrail
 
-#### Who did what on AWS?
-
-![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ejnlSrZ4eT1_BZPzT0WycA.png)
+Who did what on AWS? ![CloudTrail Architecture w:850](https://miro.medium.com/v2/format:webp/1*ejnlSrZ4eT1_BZPzT0WycA.png)
 
 ---
-<style scoped>
-section {
-  background-color: #1c619d;
-  color: #ffffff;
-}
-h1 {
-  color: #ffffff;
-}
-</style>
+<!-- _class: title -->
 
 # CloudTrail Demo
 
-Query AWS Glue APIs
+### AWS Glue API and Athena API events
 
 ---
 
@@ -130,40 +102,24 @@ Query AWS Glue APIs
   - Grafana provides a larger collection of visualizations.
 
 ---
-<style scoped>
-section {
-  background-color: #1c619d;
-  color: #ffffff;
-}
-h1 {
-  color: #ffffff;
-}
-</style>
+<!-- _class: title -->
 
 # Grafana Demo
 
 ---
 
-![](./images/athena_monitoring_solution_architecture.excalidraw.png)
+![solution architecture](./images/athena_monitoring_solution_architecture.excalidraw.png)
 
 ---
-
-<style scoped>
-section{
-  padding: 50px;
-} 
-li {
-  font-size: 25px;
-  margin-left: -30px;
-}
-</style>
+<!-- _class: columns -->
 
 ## Next Steps
 
 <div class="columns">
+
 <div>
 
-### July:
+#### July
 
 1. [Use workgroups for Airflow](#14)
 1. Add `GetQueryExecution` to CloudWatch
@@ -176,7 +132,7 @@ li {
 
 <div>
 
-### August:
+#### August
 
 1. Set up DMET monitoring working group?
 1. [Update dashboards](#15)
@@ -188,7 +144,7 @@ li {
 
 <div>
 
-### September:
+#### September
 
 1. Hand-over Athena monitoring to AP?
 1. Convert dashboards to code?
@@ -200,25 +156,11 @@ li {
 </div>
 
 ---
-<style scoped>
-section {
-  background-color: #1c619d;
-  color: #ffffff;
-}
-h1, a {
-  color: #ffffff;
-}
-</style>
+<!-- _class: title -->
 
 # Appendix
 
 ---
-<style scoped>
-section {
-    justify-content: flex-start;
-}
-</style>
-
 ## Using Athena workgroups in Airflow 
 
 1. Create `airflow-{folder}` workgroup using [`athena_workgroups.tf`](https://github.com/ministryofjustice/analytical-platform/blob/main/terraform/aws/analytical-platform-data-production/athena/athena-workgroups.tf)
@@ -230,15 +172,16 @@ section {
 4. That's it!
 
 ---
+<!-- _class: centerTextAlign -->
 
-![bg 70%](./images/workgroup_monitoring.excalidraw.png)
+![w:900px](./images/workgroup_monitoring.excalidraw.png)
 
 ---
 ## Custom CloudWatch Logs
 
 [watchtower](https://github.com/kislyuk/watchtower)  is a lightweight adapter between Python [logging](https://docs.python.org/3/library/logging.html) and CloudWatch Logs
 
-```
+```python
 import watchtower, logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -247,12 +190,13 @@ logger.info(dict(table="apple", details={}))
 logger.info(dict(table="banana", details={}))
 logger.info(dict(table="orange", details={}))
 logger.info(dict(table="apple", details={}))
+```
 
-# Log Insights query:
-# stats count(@timestamp) by table
-# orange 1
-# apple 2
-# banana 1
+CloudWatch Log Insights query `stats count(@timestamp) by table` returns:
+```
+orange 1
+apple 2
+banana 1
 ```
 
 ---
@@ -265,18 +209,3 @@ logger.info(dict(table="apple", details={}))
 
 - I use the default theme, tweaking the color palette to match the [GOV.UK color palette](https://design-system.service.gov.uk/styles/colour/).
 - I've put some guidance on the [GitHub as a one-stop-shop](https://ministryofjustice.github.io/data-and-analytics-engineering/blog/posts/github-as-a-one-stop-shop/#slides) blog post (but hoping to run a workshop at some point if there's interest)
-
-
-<style>
-a, h1, h2 {
-  color: #1c619d;
-}
-h1 {
-  font-size: 70px;
-}
-.columns {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-</style>
