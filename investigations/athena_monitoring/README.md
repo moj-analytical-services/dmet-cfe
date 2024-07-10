@@ -8,7 +8,7 @@ footer: ![image w:40](/theme/moj.png)
 _footer: ''
 ---
 
-![w:200](/theme/moj.png)
+<!-- _header: ![w:100](/theme/moj.png) -->
 
 # [Monitoring Athena and Data Access](https://github.com/moj-analytical-services/dmet-cfe/tree/main/investigations/athena_monitoring)
 
@@ -21,10 +21,10 @@ _footer: ''
 
 ## Why monitor Athena?
 
-![w:1000px](./images/athena_costs.png)
+![w:900px](./images/athena_costs.png)
 
 ---
-<!-- _class: centerTextAlign -->
+<!-- _class: removeBoxShadow -->
 
 ![athena monitoring mindmap w:1000px](./images/athena_monitoring_mindmap.excalidraw.png)
 
@@ -57,7 +57,7 @@ _footer: ''
 - ### NLP of Athena queries :arrow_right: :question:
 
 ---
-
+<!-- _class: removeBoxShadow -->
 <style scoped>
 section {
   justify-content: flex-end;
@@ -174,7 +174,7 @@ Who did what on AWS? ![CloudTrail Architecture w:850](https://miro.medium.com/v2
 ---
 <!-- _class: centerTextAlign -->
 
-![w:900px](./images/workgroup_monitoring.excalidraw.png)
+![w:850px](./images/workgroup_monitoring.excalidraw.png)
 
 ---
 ## Custom CloudWatch Logs

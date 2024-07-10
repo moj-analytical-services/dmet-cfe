@@ -12,7 +12,7 @@ footer: ![image w:40](/theme/moj.png)
 _footer: ''
 ---
 
-![w:200](/theme/moj.png)
+<!-- _header: ![w:100](/theme/moj.png) -->
 
 # <img src="https://sqlmesh.readthedocs.io/en/stable/_readthedocs/html/sqlmesh.png"> SQLMesh Evaluation
 
