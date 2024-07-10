@@ -3,16 +3,18 @@
 @import 'default';
 
 :root {
-  --title-bg-color: #1c619d;
+  --title-bg-color: #005abb;
+  /* #1c619d; */
   --title-text-color: #fff;
 }
 section {
   justify-content: flex-start;
-  /* box-shadow: inset 0 -60px 0 var(--title-bg-color); */
+  box-shadow: inset 0 -60px 0 var(--title-bg-color);
   }
 section.title {
   background: var(--title-bg-color);
-  justify-content: center;
+  justify-content: flex-end;
+  box-shadow: inset 0 200px 0 var(--title-text-color);
 }
 h1, 
 footer,
@@ -20,12 +22,11 @@ section.title,
 section.title a,
 section.title h2,
 section.title h3,
-section.title::after {
+section::after {
   color: var(--title-text-color);
 }
 a, 
-h2, 
-section::after {
+h2 {
   color: var(--title-bg-color);
 }
 h1 {
@@ -35,11 +36,16 @@ h1 {
 img {
   background-color: transparent;
 }
-footer img {
-  filter: invert(100%);
+footer,
+section::after {
+  bottom: 10px;
 }
-section.title img {
+/* section.title img {
   filter: none;
+} */
+section.title header {
+  top: 80px;
+  left: 80px;
 }
 table {
   margin-left: auto;
@@ -71,4 +77,19 @@ section.columns h5 {
 section.columns li {
   font-size: 25px;
   margin-left: -30px;
+}
+
+/* Remove box shadow */
+section.columns,
+section.removeBoxShadow {
+  box-shadow: none;
+}
+section.title header img,
+section.columns footer img,
+section.removeBoxShadow footer img {
+  filter: invert(100%);
+}
+section.columns::after,
+section.removeBoxShadow::after {
+  color: var(--title-bg-color);
 }

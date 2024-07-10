@@ -8,7 +8,7 @@ footer: ![image w:40](/theme/moj.png)
 _footer: ''
 ---
 
-![w:200](/theme/moj.png)
+<!-- _header: ![w:100](/theme/moj.png) -->
 
 # [Centre for Excellence](https://github.com/moj-analytical-services/dmet-cfe)
 
@@ -83,7 +83,7 @@ The CfE develops processes to track progress, measure success, and identify oppo
 </div>
 
 ---
-<!-- _class: title -->
+<!-- _backgroundColor: #005abb -->
 
 # What have we achieved so far?
 
@@ -150,12 +150,8 @@ Wrote Blog in Handbook and presented at Analysis in Gov.
 </div>
 
 ---
-<!-- _class: title -->
-<style scoped>
-section {
-  text-align: right;
-}
-</style>
+<!-- _class: removeBoxShadow -->
+<!-- _color: black -->
 
 # What next?
 
@@ -163,6 +159,7 @@ section {
 
 ---
 <!-- _footer: '' -->
+<!-- _class: removeBoxShadow -->
 
 ![tech-radar](images/tech-radar.png)
 
