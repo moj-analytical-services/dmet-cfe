@@ -1,0 +1,43 @@
+name: marp-to-pages
+concurrency: marp-to-pages
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Ensure build dir exists
+        run: mkdir -p build
+
+      - name: Copy images directory (if exists)
+        run: if [[ -d docs/images ]]; then cp -R docs/images build/images; fi
+
+      - name: Download moj theme
+        run: wget https://github.com/ministryofjustice/marp-moj-theme/blob/main/themes/moj.css
+
+      - name: Marp Build (README)
+        uses: docker://marpteam/marp-cli:v3.0.2
+        with:
+          args: docs/README.md -o build/index.html --theme moj.css --html
+        env:
+          MARP_USER: root:root
+
+      - name: Deploy production
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: ./build/
+          clean-exclude: pr-preview/
