@@ -4,11 +4,11 @@ theme: moj
 paginate: true
 _paginate: skip
 _class: title
-footer: ![image w:40](/theme/moj.png)
+footer: ![image w:40](https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/images/moj.png)
 _footer: ''
 ---
 
-<!-- _header: ![w:100](/theme/moj.png) -->
+<!-- _header: ![w:100](https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/images/moj.png) -->
 
 # [Centre for Excellence](https://github.com/moj-analytical-services/dmet-cfe)
 
@@ -83,7 +83,6 @@ The CfE develops processes to track progress, measure success, and identify oppo
 </div>
 
 ---
-<!-- _backgroundColor: #005abb -->
 
 # What have we achieved so far?
 
