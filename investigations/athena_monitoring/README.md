@@ -4,11 +4,11 @@ theme: moj
 paginate: true
 _paginate: skip
 _class: title
-footer: ![image w:40](/theme/moj.png)
+footer: ![image w:40](https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/images/moj.png)
 _footer: ''
 ---
 
-<!-- _header: ![w:100](/theme/moj.png) -->
+<!-- _header: ![w:100](https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/images/moj.png) -->
 
 # [Monitoring Athena and Data Access](https://github.com/moj-analytical-services/dmet-cfe/tree/main/investigations/athena_monitoring)
 
@@ -17,16 +17,15 @@ _footer: ''
 ##### July 2024 
 
 ---
-<!-- _class: centerTextAlign -->
 
 ## Why monitor Athena?
 
-![w:900px](./images/athena_costs.png)
+![w:900px center](./images/athena_costs.png)
 
 ---
 <!-- _class: removeBoxShadow -->
 
-![athena monitoring mindmap w:1000px](./images/athena_monitoring_mindmap.excalidraw.png)
+![athena monitoring mindmap w:1000px center](./images/athena_monitoring_mindmap.excalidraw.png)
 
 ---
 
@@ -79,8 +78,9 @@ section {
 
 ---
 ## AWS CloudTrail
+#### Who did what on AWS? 
 
-Who did what on AWS? ![CloudTrail Architecture w:850](https://miro.medium.com/v2/format:webp/1*ejnlSrZ4eT1_BZPzT0WycA.png)
+![CloudTrail Architecture w:850 center](https://miro.medium.com/v2/format:webp/1*ejnlSrZ4eT1_BZPzT0WycA.png)
 
 ---
 <!-- _class: title -->
@@ -172,9 +172,8 @@ Who did what on AWS? ![CloudTrail Architecture w:850](https://miro.medium.com/v2
 4. That's it!
 
 ---
-<!-- _class: centerTextAlign -->
 
-![w:850px](./images/workgroup_monitoring.excalidraw.png)
+![w:850px center](./images/workgroup_monitoring.excalidraw.png)
 
 ---
 ## Custom CloudWatch Logs

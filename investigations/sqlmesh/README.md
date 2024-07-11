@@ -8,11 +8,11 @@ transition: fade
 paginate: true
 _paginate: skip
 _class: title
-footer: ![image w:40](/theme/moj.png)
+footer: ![image w:40](https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/images/moj.png)
 _footer: ''
 ---
 
-<!-- _header: ![w:100](/theme/moj.png) -->
+<!-- _header: ![w:100](https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/images/moj.png) -->
 
 # <img src="https://sqlmesh.readthedocs.io/en/stable/_readthedocs/html/sqlmesh.png"> SQLMesh Evaluation
 
