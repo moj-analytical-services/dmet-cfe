@@ -13,6 +13,8 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      pages: write
+      id-token: write
 
     steps:
 
@@ -21,6 +23,10 @@ jobs:
         with:
           fetch-depth: 0
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      
       - name: Ensure build dir exists
         run: mkdir -p build
 
@@ -28,7 +34,7 @@ jobs:
         run: if [[ -d mission_statement/images ]]; then cp -R mission_statement/images build/images; fi
 
       - name: Download moj theme
-        run: wget https://github.com/ministryofjustice/marp-moj-theme/blob/main/themes/moj.css
+        run: wget https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/themes/moj.css
 
       - name: Get changed mission statement
         id: changed-mission-statement
@@ -37,16 +43,19 @@ jobs:
           files: mission_statement/README.md
 
       - name: Marp Build (README)
-        if: steps.changed-mission-statement.outputs.any_changed == 'true'
-        uses: docker://marpteam/marp-cli:v3.0.2
+        # if: steps.changed-mission-statement.outputs.any_changed == 'true'
+        run: |
+          npx @marp-team/marp-cli@latest slide-deck.md mission_statement/README.md \
+          -o build/index.html --theme moj.css --html
+          
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          args: mission_statement/README.md -o build/index.html --theme moj.css --html
-        env:
-          MARP_USER: root:root
-
-      - name: Deploy production
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: ./build/
-          clean-exclude: pr-preview/
+          path: 'build/'
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
