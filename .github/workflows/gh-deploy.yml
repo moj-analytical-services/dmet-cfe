@@ -36,17 +36,33 @@ jobs:
       - name: Download moj theme
         run: wget https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/themes/moj.css
 
-      - name: Get changed mission statement
-        id: changed-mission-statement
-        uses: tj-actions/changed-files@v44
-        with:
-          files: mission_statement/README.md
-
-      - name: Marp Build (README)
-        # if: steps.changed-mission-statement.outputs.any_changed == 'true'
+      - name: Marp Build (Mission statement)
         run: |
-          npx @marp-team/marp-cli@latest slide-deck.md mission_statement/README.md \
+          npx @marp-team/marp-cli@latest mission_statement/README.md \
           -o build/index.html --theme moj.css --html
+
+      - name: Create directories (Investigations)
+        run: |
+          for directory in investigations/*/ ; do
+            mkdir -p build/$(basename $directory)
+          done
+
+      - name: Copy Images directory (Investigations)
+        run: |
+          for directory in investigations/*/ ; do
+            if [[ -d $directory/images ]]; 
+            then 
+              cp -R $directory/images build/$(basename $directory)/images;
+              echo "copied $directory/images"
+            fi
+          done
+
+      - name: Marp Build (Investigations)
+        run: |
+          for directory in investigations/*/ ; do
+            npx @marp-team/marp-cli@latest $directory/README.md \
+            -o build/$(basename $directory)/index.html --theme moj.css --html
+          done
           
       - name: Setup Pages
         uses: actions/configure-pages@v5
