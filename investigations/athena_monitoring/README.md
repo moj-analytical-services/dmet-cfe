@@ -167,7 +167,7 @@ section {
 
 2. Add `mojap-athena-query-dump/{folder}` to Airflow role Athena `dump_bucket`
 
-3. Add `"WR_WORKGROUP": "airflow-dev-workgroup"` to the env_vars dictionary that is passed to the Airflow task
+3. Add `"WR_WORKGROUP": "airflow-{folder}"` to the env_vars dictionary that is passed to the Airflow task
 
 4. That's it!
 
