@@ -14,6 +14,8 @@ _footer: ''
 
 ## Centre for Excellence
 
+##### Data and Analytics Engineeing
+
 ##### July 2024 
 
 ---
@@ -38,37 +40,68 @@ _footer: ''
 
 ## Does ![dltHub](https://cdn.sanity.io/images/nsq559ov/production/7f85e56e715b847c5519848b7198db73f793448d-82x25.svg?w=1800&auto=format) / API Data Extraction need an Evaluation?
 
-- Cross-cutting need for extracting data from APIs (as opposed to niche)
+- Cross-cutting need for extracting data from APIs (as opposed to niche use case)
 
 - APIs are evolving ([REST vs GraphQL](https://aws.amazon.com/compare/the-difference-between-graphql-and-rest/))
 
 - Multiple stakeholders involved (allow analysts to extract data from APIs?)
 
-- Need to integrate with existing tech stack
+- Need to integrate with existing data and and analytics engineering tech stack
 
 - Alternatives are available e.g. [Meltano](https://meltano.com/)
 
-- dltHub is very Recent ([2022](https://github.com/dlt-hub/dlt/graphs/contributors))
-
-- Do we need to consider data extraction in general?
+- dltHub can be used for more than extracting data from APIs so there is a risk of expansion and duplication
 
 ---
 
-![bg right:40% 100%](https://images.squarespace-cdn.com/content/v1/5d0c11171c25c0000131a99d/1595278908938-UTBCMK33ZV0QXF5G8M5W/story+map+diagram.png?format=2500w)
+<style scoped>
+.columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+p, li {
+  font-size: 25px;
+}
+</style>
 
 ## Proposed Approach
 
-Based on the 2023 [Iceberg Evaluation](https://miro.com/app/board/uXjVMNUs7Pg=/)  
+Modified from 2023 [Iceberg Evaluation](https://miro.com/app/board/uXjVMNUs7Pg=/) and [RFCs](https://leaddev.com/process/thorough-team-guide-rfcs)
 
-1. Set up cross-domain working group
-1. Identify Personas / Users
-1. Identify & Prioritise Evaluation Criteria
-1. Create customised User Story Map
-1. Get Feedback and Iterate?
-1. Start Evaluation
-1. Iterate on User Story Map?
-1. Publish results and next steps
+<div class="columns">
 
+<div>
+
+
+#### Investigation
+
+1. Set up a (cross-domain) working group
+1. Understand capabilities / use-cases
+1. Complete [whether to RFC](./images/whether_to_rfc.excalidraw.png)
+1. Present at Community Forum / Tech Review
+
+</div>
+
+<div>
+
+####  Evaluation
+
+1. Complete [RFC Template](./rfc_template.md)
+1. Optional:
+    1. Identify [Personas / Users](./images/persona.excalidraw.png)
+    1. Identify & Prioritise [Evaluation Criteria](./images/evaluation_criteria.excalidraw.png)
+    1. Create customised [User Story Map](./images/data_engineering_story_map.excalidraw.png)
+1. Complete Evaluation
+1. Present at Community Forum / Tech Review
+
+</div>
+
+</div>
+
+---
+
+## Whether to RFC
+
+![whether to RFC](./images/whether_to_rfc.excalidraw.png)
 
 ---
 
@@ -87,6 +120,4 @@ Based on the 2023 [Iceberg Evaluation](https://miro.com/app/board/uXjVMNUs7Pg=/)
 ## Data Engineer Story Mapping
 
 ![data engineer story mapping](./images/data_engineering_story_map.excalidraw.png)
-
----
 
