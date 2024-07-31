@@ -74,20 +74,81 @@ section {
 
 # CloudWatch Demo
 
-### Athena Workgroup Metrics
+### Monitoring Athena Workgroups using CloudWatch Metrics
 
 ---
-## AWS CloudTrail
+<!-- _class: removeBoxShadow -->
+
+## [AWS CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html)
 #### Who did what on AWS? 
 
 ![CloudTrail Architecture w:850 center](https://miro.medium.com/v2/format:webp/1*ejnlSrZ4eT1_BZPzT0WycA.png)
+
+<!--  A web service that records AWS API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements returned by the AWS service. -->
+
+---
+<!-- _class: removeBoxShadow -->
+
+<style scoped>
+p {
+  font-size: 20px;
+}
+</style>
+
+## Recording / Querying CloudTrail events
+
+###### CloudTrail provides three ways to record and view activity in an AWS account:
+
+<div class="columns">
+
+<div>
+
+##### [Event history](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html)
+
+Automatically enabled by default.
+
+Allows you to view the last 90 days of management events in a Region.
+
+There are no CloudTrail charges for viewing the Event history.
+
+</div>
+
+<div>
+
+##### [CloudTrail Lake](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake.html)
+
+Events are aggregated into event data stores based on criteria.
+
+Can view the last 10 or 7 years of events across regions or accounts.
+
+Events can be queried using [CloudTrail Lake queries](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-queries.html).
+
+Data stores and queries incur charges. 
+
+</div>
+
+<div>
+
+##### [Trails](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html)
+
+Stores events in an S3 bucket & optionally to CloudWatch Logs.
+
+Events can be queried using [CloudWatch Logs Insight](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html) or Athena. 
+
+[Events are flattened](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax-Parse.html) which can be easier to query using Athena, especially if they contain arrays.
+
+Amazon S3 storage and querying incur  charges.
+
+</div>
+
+</div>
 
 ---
 <!-- _class: title -->
 
 # CloudTrail Demo
 
-### AWS Glue API and Athena API events
+### Monitoring AWS Glue API and Athena API events
 
 ---
 
@@ -120,11 +181,11 @@ section {
 
 The architecture is split into three parts:
 
-1. Monitoring data access by using AWS Glue APIs, and aggregating using Athena. 
-This approach still needs to be evaluated because it relies on the undocumented BatchGetTable API
-2. Monitoring Athena usage at the Workgroup level using CloudWatch metrics
+1. **Monitor data access** using AWS Glue APIs, and aggregate/query using Athena. 
+This approach still needs to be evaluated because it relies on the undocumented BatchGetTable API.
+2. **Monitor Athena usage at the workgroup level** using CloudWatch metrics.
 
-3. Monitoring Athena usage at the user level using various Athena APIs, and aggregating using CloudWatch Log
+3. **Monitor Athena usage at the user level** using various Athena APIs, and aggregate using CloudWatch Log.
 This approach still needs to be evaluated because of the cost incurred triggering an lambda function every time an Athena query is called. 
 
 ---
@@ -139,7 +200,7 @@ This approach still needs to be evaluated because of the cost incurred triggerin
 
 #### 2024 Q3
 
-More investigations
+###### More investigations
 
 1. [Deploy workgroups for Airflow](#14)
 1. Collaborate with OP discovery
@@ -151,7 +212,7 @@ More investigations
 
 #### 2024 Q4
 
-Cross-cutting monitoring
+###### Cross-cutting monitoring
 
 1. Set up DMET monitoring working group?
 1. Deploy monitoring infrastructure 
@@ -163,7 +224,7 @@ Cross-cutting monitoring
 
 #### 2025 Q1
 
-Application-specific monitoring
+###### Application monitoring
 
 1. Hand-over Athena and data monitoring to AP?
 1. Convert dashboards to code?
