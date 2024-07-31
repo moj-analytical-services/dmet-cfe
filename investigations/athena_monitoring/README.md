@@ -10,9 +10,9 @@ _footer: ''
 
 <!-- _header: ![w:100](https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/images/moj.png) -->
 
-# [Monitoring Athena and Data Access](https://github.com/moj-analytical-services/dmet-cfe/tree/main/investigations/athena_monitoring)
+# [Monitoring Athena and Data Access](https://moj-analytical-services.github.io/dmet-cfe/athena_monitoring/)
 
-## Centre for Excellence
+## [![width:30](https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg)](https://github.com/moj-analytical-services/dmet-cfe/tree/main/investigations/athena_monitoring/) Centre for Excellence
 
 ##### July 2024 
 
@@ -108,9 +108,27 @@ section {
 
 ---
 
+<!-- _class: removeBoxShadow -->
+
+## Proposed Athena and Data Monitoring Architecture
+
 ![solution architecture](./images/athena_monitoring_solution_architecture.excalidraw.png)
 
 ---
+
+## Proposed Athena and Data Monitoring Architecture
+
+The architecture is split into three parts:
+
+1. Monitoring data access by using AWS Glue APIs, and aggregating using Athena. 
+This approach still needs to be evaluated because it relies on the undocumented BatchGetTable API
+2. Monitoring Athena usage at the Workgroup level using CloudWatch metrics
+
+3. Monitoring Athena usage at the user level using various Athena APIs, and aggregating using CloudWatch Log
+This approach still needs to be evaluated because of the cost incurred triggering an lambda function every time an Athena query is called. 
+
+---
+
 <!-- _class: columns -->
 
 ## Next Steps
@@ -119,37 +137,37 @@ section {
 
 <div>
 
-#### July
+#### 2024 Q3
 
-1. [Use workgroups for Airflow](#14)
-1. Add `GetQueryExecution` to CloudWatch
-1. Investigate `BatchGetTable`
+More investigations
+
+1. [Deploy workgroups for Airflow](#14)
 1. Collaborate with OP discovery
-1. OP to add Data and Analytics Engineers to data account
-1. OP to add Ireland CloudWatch metrics
+1. Colloborate with AWS on how to monitor data usage
 
 </div>
 
 <div>
 
-#### August
+#### 2024 Q4
+
+Cross-cutting monitoring
 
 1. Set up DMET monitoring working group?
+1. Deploy monitoring infrastructure 
 1. [Update dashboards](#15)
-1. OP to implement dashboard-as-code?
-1. Advertise dashboard with users?
-1. AP to terraform Lamdba and `GetQueryExecution` resources?
 
 </div>
 
 <div>
 
-#### September
+#### 2025 Q1
 
-1. Hand-over Athena monitoring to AP?
+Application-specific monitoring
+
+1. Hand-over Athena and data monitoring to AP?
 1. Convert dashboards to code?
-1. Start create-a-derived-table monitoring workstream
-1. Refactor DMET applications to use [custom cloudwatch logs](#16)?
+1. Build monitoring for applications?
 
 </div>
 
@@ -197,14 +215,3 @@ orange 1
 apple 2
 banana 1
 ```
-
----
-## [Marp](https://marp.app/) for Slides
-
-- This slide deck was created using [Marp](https://marp.app/) (Markdown Presentation Ecosystem).
-- Marp's format is based on [CommonMark](https://commonmark.org/), a consistent Markdown specification.
-- For those familiar with [LaTex](https://www.latex-project.org/), it's a way of separating formatting from text, and means you can save documents as code.
-- Marp comes with various in-built [themes](https://github.com/marp-team/marp-core/blob/main/themes/README.md).
-
-- I use the default theme, tweaking the color palette to match the [GOV.UK color palette](https://design-system.service.gov.uk/styles/colour/).
-- I've put some guidance on the [GitHub as a one-stop-shop](https://ministryofjustice.github.io/data-and-analytics-engineering/blog/posts/github-as-a-one-stop-shop/#slides) blog post (but hoping to run a workshop at some point if there's interest)
