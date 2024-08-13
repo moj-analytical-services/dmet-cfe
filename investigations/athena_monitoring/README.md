@@ -244,7 +244,7 @@ This approach still needs to be evaluated because of the cost incurred triggerin
 
 1. Create `airflow-{folder}` workgroup using [`athena_workgroups.tf`](https://github.com/ministryofjustice/analytical-platform/blob/main/terraform/aws/analytical-platform-data-production/athena/athena-workgroups.tf)
 
-2. Add `mojap-athena-query-dump/{folder}` to Airflow role Athena `dump_bucket`
+2. Add `mojap-athena-query-dump/{folder}` to S3 `read_write` permissions on Airflow role 
 
 3. Add `"WR_WORKGROUP": "airflow-{folder}"` to the env_vars dictionary that is passed to the Airflow task
 
