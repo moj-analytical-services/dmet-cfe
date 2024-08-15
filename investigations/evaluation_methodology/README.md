@@ -10,35 +10,38 @@ _footer: ''
 
 <!-- _header: ![w:100](https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/images/moj.png) -->
 
-# Evaluation Template
+# [Evaluation Methodology](https://moj-analytical-services.github.io/dmet-cfe/evaluation_methodology/)
+
+*How we make (significant) changes to our tech stack*
 
 ## Centre for Excellence
 
-##### Data and Analytics Engineeing
-
-##### July 2024 
+##### Data and Analytics Engineering
 
 ---
+<style scoped>
+.columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+</style>
 
-##  Why follow a Template? 
+## Why formalise tech stack changes?
 
 - Ensures all stakeholders are identified and informed
 
 - Future-proof the solution
 
-- Work around domain barriers
-
-- Minimise duplication
+- Minimise misalignment & duplication across domains
 
 - Speed up development
 
 - Due diligence
 
-![bg left 90%](https://evaluationcanada.ca/client_assets/images/people_hold_arrow.png)
+![bg left:40% 100%](https://evaluationcanada.ca/client_assets/images/people_hold_arrow.png)
 
 ---
 
-## Does ![dltHub](https://cdn.sanity.io/images/nsq559ov/production/7f85e56e715b847c5519848b7198db73f793448d-82x25.svg?w=1800&auto=format) / API Data Extraction need an Evaluation?
+## Does ![dltHub](https://cdn.sanity.io/images/nsq559ov/production/7f85e56e715b847c5519848b7198db73f793448d-82x25.svg?w=1800&auto=format) / API Data Extraction need an evaluation?
 
 - Cross-cutting need for extracting data from APIs (as opposed to niche use case)
 
@@ -46,7 +49,7 @@ _footer: ''
 
 - Multiple stakeholders involved (allow analysts to extract data from APIs?)
 
-- Need to integrate with existing data and and analytics engineering tech stack
+- Needs to integrate with existing data and analytics engineering tech stack
 
 - Alternatives are available e.g. [Meltano](https://meltano.com/)
 
@@ -54,16 +57,22 @@ _footer: ''
 
 ---
 
+## Evaluation methodology
+
+![evaluation methodology](./images/evaluation_methodology.excalidraw.png)
+
+---
+
 <style scoped>
 .columns {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-p, li {
-  font-size: 25px;
+li {
+  font-size: 22px;
 }
 </style>
 
-## Proposed Approach
+## Evaluation methodology
 
 Modified from 2023 [Iceberg Evaluation](https://miro.com/app/board/uXjVMNUs7Pg=/) and [team guide to RFCs](https://leaddev.com/process/thorough-team-guide-rfcs)
 
@@ -74,9 +83,9 @@ Modified from 2023 [Iceberg Evaluation](https://miro.com/app/board/uXjVMNUs7Pg=/
 
 #### Investigation
 
-1. Set up a (cross-domain) working group
+1. Identify enhancement to tech stack
+1. Notify Data and Analytics Engineering community and Soumaya
 1. Understand capabilities / use-cases
-1. Complete [whether to RFC](./images/whether_to_rfc.excalidraw.png)
 1. Present at Community Forum / Tech Review
 
 </div>
@@ -85,11 +94,12 @@ Modified from 2023 [Iceberg Evaluation](https://miro.com/app/board/uXjVMNUs7Pg=/
 
 ####  Evaluation
 
+1. Set up a cross-domain(?) working group
+1. Complete [pre-RFC](./images/whether_to_rfc.excalidraw.png) template?
 1. Complete [RFC Template](./rfc_template.md)
-1. Optional:
-    1. Identify [Personas / Users](./images/persona.excalidraw.png)
-    1. Identify & Prioritise [Evaluation Criteria](./images/evaluation_criteria.excalidraw.png)
-    1. Create customised [User Story Map](./images/data_engineering_story_map.excalidraw.png)
+1. Identify [Personas / Users](./images/persona.excalidraw.png)
+1. Identify & Prioritise [Evaluation Criteria](./images/evaluation_criteria.excalidraw.png)
+1. Create customised [User Story Map](./images/data_engineering_story_map.excalidraw.png)
 1. Complete Evaluation
 1. Present at Community Forum / Tech Review
 
@@ -101,7 +111,7 @@ Modified from 2023 [Iceberg Evaluation](https://miro.com/app/board/uXjVMNUs7Pg=/
 
 ## Whether to RFC
 
-![whether to RFC](./images/whether_to_rfc.excalidraw.png)
+![pre-RFC](./images/pre_rfc.excalidraw.png)
 
 ---
 
@@ -121,3 +131,18 @@ Modified from 2023 [Iceberg Evaluation](https://miro.com/app/board/uXjVMNUs7Pg=/
 
 ![data engineer story mapping](./images/data_engineering_story_map.excalidraw.png)
 
+---
+
+## Next Steps
+
+There are still lots of open questions
+
+1. How to ensure proportionality?
+
+1. How to enforce standards without stifling innovation?
+
+1. What is the role of the Centre for Excellence?
+
+1. When to flip from investigation to evaluation?
+
+Any other questions?
