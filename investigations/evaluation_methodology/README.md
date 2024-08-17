@@ -37,7 +37,7 @@ _footer: ''
 
 - Due diligence
 
-![bg left:40% 100%](https://evaluationcanada.ca/client_assets/images/people_hold_arrow.png)
+![bg left:40% 90%](https://evaluationcanada.ca/client_assets/images/people_hold_arrow.png)
 
 ---
 
@@ -87,6 +87,7 @@ Modified from 2023 [Iceberg Evaluation](https://miro.com/app/board/uXjVMNUs7Pg=/
 1. Notify Data and Analytics Engineering community and Soumaya
 1. Understand capabilities / use-cases
 1. Present at Community Forum / Tech Review
+1. Complete [pre-RFC](./images/whether_to_rfc.excalidraw.png) template?
 
 </div>
 
@@ -95,11 +96,10 @@ Modified from 2023 [Iceberg Evaluation](https://miro.com/app/board/uXjVMNUs7Pg=/
 ####  Evaluation
 
 1. Set up a cross-domain(?) working group
-1. Complete [pre-RFC](./images/whether_to_rfc.excalidraw.png) template?
-1. Complete [RFC Template](./rfc_template.md)
 1. Identify [Personas / Users](./images/persona.excalidraw.png)
 1. Identify & Prioritise [Evaluation Criteria](./images/evaluation_criteria.excalidraw.png)
 1. Create customised [User Story Map](./images/data_engineering_story_map.excalidraw.png)
+1. Complete [RFC Template](./rfc_template.md)
 1. Complete Evaluation
 1. Present at Community Forum / Tech Review
 
@@ -109,9 +109,9 @@ Modified from 2023 [Iceberg Evaluation](https://miro.com/app/board/uXjVMNUs7Pg=/
 
 ---
 
-## Whether to RFC
+## Pre-RFC
 
-![pre-RFC](./images/pre_rfc.excalidraw.png)
+![pre-RFC w:1100](./images/pre_rfc.excalidraw.png)
 
 ---
 
@@ -135,14 +135,12 @@ Modified from 2023 [Iceberg Evaluation](https://miro.com/app/board/uXjVMNUs7Pg=/
 
 ## Next Steps
 
-There are still lots of open questions
+There are still lots of open questions:
 
 1. How to ensure proportionality?
-
 1. How to enforce standards without stifling innovation?
-
 1. What is the role of the Centre for Excellence?
-
 1. When to flip from investigation to evaluation?
-
-Any other questions?
+1. Where to record this information?
+1. How do other teams e.g. Data Science deal with x-domain tech changes?
+1. How to integrate with other evaluation forums e.g. solution surgery?
