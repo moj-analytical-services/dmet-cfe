@@ -15,13 +15,13 @@ _footer: ''
 
 ## Parminder & Tom H
 
-### August 2024 
+### August 2024
 
 ---
 
 ## Why?"
 
-- 
+-
 
 ![bg left 50%](https://evaluationcanada.ca/client_assets/images/people_hold_arrow.png)
 
@@ -29,11 +29,11 @@ _footer: ''
 
 ## What? - Long Living Feature Branches
 
-- Goal - 
+- **Goal** - 
 
 - Feature based development ([GitFlow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow))
 
-- Developers create seperate, long lived branches for individual features or tasks.
+- Developers create seperate, long lived branches for individual features.
 
 - Depending on complexity, feature branches can be active for days, weeks or months.
 
@@ -47,7 +47,34 @@ _footer: ''
 
 ![w:800 center - Gitflow img](./images/)
 
+---
 
+## Benefits of Gitflow
+
+- Isolation of work:
+  - Features are developed independently, reducing the risk of conflicts.
+
+- Controlled Integration:
+  - Code is reviewed and tested before merging.
+
+- Supports Complex Projects:
+  - Easier to manage large, multi-feature projects.
+
+- Flexibility:
+  -  Different branching strategies can be adapted to team needs.
+
+---
+
+## Disdvantages of Gitflow
+
+- Complexity
+  - Managing multiple branches can become complicated.
+
+- Long Living Branches
+  - Feature branches can diverge signifcantly, leading to merge conflicts.
+
+- More Overhead.
+  - Time consuming to review PR's and testing.
 
 ---
 
@@ -87,17 +114,19 @@ _footer: ''
   - No need to manage complex branching structures.
 
 ---
-## Slide 5
 
-Some interesting text
+## Disdvantages of Trunk Based Development
+
+- Requires Discpline
+  - Developers must commit to working code frequently.
+
+- Risk of Breaking Changes
+  - Changes commited to the trunk can affect all devs.
+
+- Not ideal for Large Teams
+  - Scaling can be challenging in large and distributed teams.
 
 ---
-## Slide 6
-
-Some interesting text
-
----
-
 ## Splink - CASE Study
 
 Some interesting text
@@ -113,6 +142,38 @@ Some interesting text
 ## Splink - CASE Study
 
 Some interesting text
+
+---
+
+
+## create-a-pipeline - CASE Study
+
+Some interesting text
+
+---
+
+## create-a-pipeline - CASE Study
+
+Some interesting text
+
+---
+
+## create-a-pipeline - CASE Study
+
+Some interesting text
+
+---
+
+## Best Practices
+
+- TBD
+  - Commit often with small incremental changes
+  - Use feature toggles to manage incomplete features
+
+- Feature-Based
+  - Keep branches short-lived to minimise divergence.
+  - Ensure thorough code reviews and testing before merging.
+  - Regularly rebase feature branches on the main branch to reduce conflicts.
 
 ---
 
@@ -125,3 +186,17 @@ Some interesting text
 ## The End
 
 Thanks!
+
+---
+
+## References
+
+List of references:
+    
+Trunk-Based Development - Atlassian
+    
+Trunk vs. Feature-Based Development - CircleCI
+    
+Git Workflow - Atlassian
+
+---
