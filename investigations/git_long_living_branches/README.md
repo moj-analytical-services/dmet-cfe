@@ -11,116 +11,117 @@ _footer: ''
 
 <!-- _header: ![w:100](https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/images/moj.png) -->
 
-# Git Long Living Branches
+## Gitflow vs Trunk Based Development
 
-![bg left 60%](./images/git-logo.png)
+## Parminder & Tom H
 
-## Parminder & Tom
-
-##### July 2024 
+### August 2024 
 
 ---
 
-##  Slide 1
+## Why?"
 
-- Ensures all stakeholders are identified and informed
-
-- Future-proof the solution
-
-- Work around domain barriers
-
-- Minimise duplication
-
-- Speed up development
-
-- Due diligence
-
-![bg left 90%](https://evaluationcanada.ca/client_assets/images/people_hold_arrow.png)
-
----
-
-## Slide 2
-
-- Cross-cutting need for extracting data from APIs (as opposed to niche)
-
-- APIs are evolving ([REST vs GraphQL](https://aws.amazon.com/compare/the-difference-between-graphql-and-rest/))
-
-- Multiple stakeholders involved (allow analysts to extract data from APIs?)
-
-- Need to integrate with existing tech stack
-
-- Alternatives are available e.g. [Meltano](https://meltano.com/)
-
-- dltHub is very Recent ([2022](https://github.com/dlt-hub/dlt/graphs/contributors))
-
-- Do we need to consider data extraction in general?
-
----
-
-## Slide 3
-
-Some interesting text 
-
-![xxrfxxr](./images/git-logo.png)
-
-
--
 - 
--
+
+![bg left 50%](https://evaluationcanada.ca/client_assets/images/people_hold_arrow.png)
 
 ---
-## Slide 4
 
-Some interesting text 
+## What? - Long Living Feature Branches
 
--
-- 
--
+- Goal - 
+
+- Feature based development ([GitFlow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow))
+
+- Developers create seperate, long lived branches for individual features or tasks.
+
+- Depending on complexity, feature branches can be active for days, weeks or months.
+
+- Once the feature is complete and throroughly tested, it can be merged back into the main branch.
+
+![bg 20%](./images/git-logo.png)
+
+---
+
+## Gitflow Diagram
+
+![w:800 center - Gitflow img](./images/)
 
 
+
+---
+
+## What is Trunk Based Development?
+
+- **Goal** - perform small incremental updates to minimise merge conflicts, and streamline the dev pipeline.
+
+- Developers collaborate frequently on a single shared branch: "**trunk**" or "**main**".
+
+- Frequent commits to the trunk, often multiple times a day.
+
+- Short-lived branches are allowed, but are merged back to the **main** branch quickly.
+
+![w:230 h:100 - gitlogo](./images/git-logo.png)
+
+---
+
+## Trunk Based Development Diagram
+
+![w:800 center - Trunk Based Development img](./images/trunk-based-dev.png)
+
+---
+
+## Benefits of Trunk Based Development
+
+- Continuous Integration (CI)
+  - Easier to integrate changes continiously.
+  - Promotes frequent and smaller releases.
+
+- Reduced marge conflicts
+  - Less branching means fewer conflicts to resolve.
+
+- Faster feedback loops.
+  - Immediate feedback on changes.
+
+- Simplified Workflow:
+  - No need to manage complex branching structures.
 
 ---
 ## Slide 5
 
-Some interesting text 
-
--
-- 
--
+Some interesting text
 
 ---
 ## Slide 6
 
-Some interesting text 
-
-
----
-## Slide 7
-
-Some interesting text 
-
-
+Some interesting text
 
 ---
-## Splink - Case Study
 
-Some interesting text 
+## Splink - CASE Study
 
-
-
----
-## Slide 9
-
-Some interesting text 
-
-
+Some interesting text
 
 ---
-## Slide 10
 
-Some interesting text 
+## Splink - CASE Study
+
+Some interesting text
 
 ---
+
+## Splink - CASE Study
+
+Some interesting text
+
+---
+
+## Questions?
+
+Some interesting text
+
+---
+
 ## The End
 
 Thanks!
