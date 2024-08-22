@@ -11,19 +11,25 @@ _footer: ''
 
 <!-- _header: ![w:100](https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/images/moj.png) -->
 
-## Gitflow vs Trunk Based Development
+## Git Branching Strategies
 
 ## Parminder & Tom H
 
-![bg right:40%](./images/code-tree.png)
+![bg right:45%](./images/code-tree.png)
 
 ### August 2024
 
 ---
 
-## Why?"
+## Why?
 
--
+- Organize Developmental workflow.
+
+- Facillitate better collaboration in teams.
+
+- Manages Code Integration
+
+- Reduces risk of introducing bugs.
 
 ![bg left:20% 100%](https://evaluationcanada.ca/client_assets/images/people_hold_arrow.png)
 
@@ -105,11 +111,12 @@ _footer: ''
 - Continuous Integration (CI)
   - Easier to integrate changes continuously.
   - Promotes frequent and smaller releases.
+
 - Reduced marge conflicts
   - Less branching means fewer conflicts to resolve and less code to review.
+
 - Faster feedback loops.
   - Immediate feedback on changes.
-- Avoids clashes with other features in development.
 
 ---
 
@@ -126,11 +133,13 @@ _footer: ''
 
 ---
 
+![bg center - splink team photo](./images/splink-team.jpg)
+
+---
 <h2>
   <img src="./images/splink-logo.png" alt="Splink Logo" style="width: 200px; vertical-align: middle; margin-right: 10px;">
   CASE Study
 </h2>
-
 
 #### **Background**
 
@@ -139,7 +148,7 @@ In Autumn of 2023, we decided to undertake a **major refactor of Splink**. This 
 However, for the first few months of this process, we had ongoing development in both versions 3 and 4. **This was due to**:
 
 - Team members were actively developing data linking pipeline features, all required in version 3.
-- There were ongoing features in version 3 that needed finalisation.
+- There were ongoing features in version 3 that needed finalization.
 
 ---
 
@@ -150,7 +159,7 @@ However, for the first few months of this process, we had ongoing development in
 
 Initially, we were infrequently merging changes from the main branch into our development branch. This led to regular divergences between the two versions and we were constantly resolving relatively large **merge conflicts**.
 
-#### **This raised a question around version synchronisation:**
+#### **This raised a question around version synchronization:**
 - What's the best strategy for keeping the new version updated with changes from the main branch?
 
 ---
@@ -192,7 +201,7 @@ This ensured `splink_4_dev` was consistently updated with changed from the main 
 
 ### **Cons**
 
-- **Didn't solve all of our problems**: While it helped with synchronisation, it didn't fundamentally fix our issues with a divering codebase and stale code.
+- **Didn't solve all of our problems**: While it helped with synchronization, it didn't fundamentally fix our issues with a diverging codebase and stale code.
     - Required the structure of each branch remain consistent, which was only feasible in early development.
 - **Overkill for our needs**: A simpler notification system might have been more appropriate and less faff to set up.
 
@@ -210,7 +219,7 @@ However, it didn't fundamentally resolve a lot of the issues we were encounterin
 ---
 
 
-## create-a-pipeline - Linting
+## create-a-pipeline - Linting Case Study
 
 - [PR - #350](https://github.com/moj-analytical-services/airflow-create-a-pipeline/pull/350)
 
@@ -240,6 +249,7 @@ However, it didn't fundamentally resolve a lot of the issues we were encounterin
 - TBD
   - Commit often with small incremental changes
   - Use feature toggles to manage incomplete features
+  - 
 
 - Feature-Based
   - Keep branches short-lived to minimize divergence.
@@ -253,31 +263,22 @@ However, it didn't fundamentally resolve a lot of the issues we were encounterin
 - Pair experienced developers with those new to a codebase.
 - Communication, Communication, Communication
 
-
 ---
 
-## Strategies from the wild:
-
--
-
-
--
-
----
-
-
-## Questions?
+## Discussion Questions:
 
 - What have people done before which has been successful?
+
 - What should be considered a long living branch? (*a few days, weeks? etc.*)
   How long is too long? (*Month? Year?*)
+
 - Other strategies for managing long living branches.
 
 ---
 
-## The End
+##
 
-Thanks!
+![bg 90%](./images/the-end.jpg)
 
 ---
 
