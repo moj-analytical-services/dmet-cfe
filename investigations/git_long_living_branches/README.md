@@ -41,7 +41,7 @@ _footer: ''
 
 - Once the feature is complete and thoroughly tested, it can be merged back into the main branch.
 
-![bg 20%](./images/git-logo.png)
+![w:230 h:100 - gitlogo](./images/git-logo.png)
 
 ---
 
@@ -51,7 +51,7 @@ _footer: ''
 
 ---
 
-## Benefits of Gitflow
+## Benefits of Git-flow
 
 - Isolation of work:
   - Features are developed independently, reducing the risk of conflicts.
@@ -67,7 +67,7 @@ _footer: ''
 
 ---
 
-## Disadvantages of Gitflow
+## Disadvantages of Git-flow
 
 - Complexity
   - Managing multiple branches can become complicated.
@@ -89,9 +89,9 @@ _footer: ''
 - Frequent commits to the trunk, often multiple times a day.
 
 - Short-lived branches are allowed, but are merged back to the **main** branch quickly.
-<br>
+
 ![w:230 h:100 - gitlogo](./images/git-logo.png)
-</br>
+
 ---
 
 ## Trunk Based Development Diagram
@@ -216,8 +216,6 @@ Thanks!
 ---
 
 ## References
-
-List of references:
         
 - [Git Branching Strategies vs Trunk Based Development - Launch Darkly BLOG](https://launchdarkly.com/blog/git-branching-strategies-vs-trunk-based-development/)
     
