@@ -15,6 +15,8 @@ _footer: ''
 
 ## Parminder & Tom H
 
+![bg right:40%](./images/code-tree.png)
+
 ### August 2024
 
 ---
@@ -27,11 +29,11 @@ _footer: ''
 
 ---
 
-## What? - Long Living Feature Branches
+## What? - Long Living Feature Branches (Git-flow)
 
-- **Goal** - 
+- **Goal - Simplify release management and isolating feature development.**
 
-- Feature based development ([GitFlow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow))
+- Feature based development ([Git-Flow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow))
 
 - Developers create separate, long lived branches for individual features.
 
@@ -45,7 +47,7 @@ _footer: ''
 
 ## Gitflow Diagram
 
-![w:800 center - Gitflow img](./images/)
+![w:10000 center - Git-flow img](./images/git-flow.png)
 
 ---
 
@@ -94,7 +96,7 @@ _footer: ''
 
 ## Trunk Based Development Diagram
 
-![w:800 center - Trunk Based Development img](./images/trunk-based-dev.png)
+![w:1000 center - Trunk Based Development img](./images/trunk-based-dev.png)
 
 ---
 
@@ -107,45 +109,25 @@ _footer: ''
   - Less branching means fewer conflicts to resolve and less code to review.
 - Faster feedback loops.
   - Immediate feedback on changes.
-- Simplified Workflow:
-  - No need to manage complex branching structures.
+- Avoids clashes with other features in development.
   
 
 ---
 
-## Disdvantages of Trunk Based Development
+## Disadvantages of Trunk Based Development
 
 - Requires Discipline
   - Developers must commit to working code frequently.
+
 - Risk of Breaking Changes
   - Changes committed to the trunk can affect all devs.
+
 - Not ideal for Large Teams
   - Scaling can be challenging in large and distributed teams.
 
 ---
 
-## Splink - CASE Study
-
-<!-- _class: columns -->
-
-<div class="columns">
-
-<div>
-
-creating columns
-
-</div>
-
-<div>
-other interesting
-</div>
-
-<div>
-other interesting
-</div>
-
-
-</div>
+![bg 100%](./images/splink-team.jpg)
 
 ---
 
@@ -164,21 +146,26 @@ Some interesting text
 
 ## create-a-pipeline - Linting 
 
+- [PR - #350](https://github.com/moj-analytical-services/airflow-create-a-pipeline/pull/350)
+
 - Refactor all of our linting tools.
 
 - Everyone was on different components, and it was a major change on how we approached linting in the codebase.
 
----
-
-##  create-a-pipeline - Linting
-
-Some interesting text
+- Used long living branches to manage each componential change.
 
 ---
 
-## create-a-pipeline - Linting
+## 
 
-Some interesting text
+
+![bg w:800 h:650](./images/linting-main-pr.png)
+
+---
+
+##  Linting
+
+![bg 90%](./images/linting-prs.png)
 
 ---
 
@@ -231,11 +218,11 @@ Thanks!
 ## References
 
 List of references:
+        
+- [Git Branching Strategies vs Trunk Based Development - Launch Darkly BLOG](https://launchdarkly.com/blog/git-branching-strategies-vs-trunk-based-development/)
     
-Trunk-Based Development - Atlassian
-    
-Trunk vs. Feature-Based Development - CircleCI
-    
-Git Workflow - Atlassian
+- [Git Branching Strategies - Medium](https://medium.com/@sreekanth.thummala/choosing-the-right-git-branching-strategy-a-comparative-analysis-f5e635443423)
 
----
+- [Git Workflow - Atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+- [Trunk-Based Development - Atlassian](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development)
