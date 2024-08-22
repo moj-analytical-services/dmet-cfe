@@ -33,11 +33,11 @@ _footer: ''
 
 - Feature based development ([GitFlow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow))
 
-- Developers create seperate, long lived branches for individual features.
+- Developers create separate, long lived branches for individual features.
 
 - Depending on complexity, feature branches can be active for days, weeks or months.
 
-- Once the feature is complete and throroughly tested, it can be merged back into the main branch.
+- Once the feature is complete and thoroughly tested, it can be merged back into the main branch.
 
 ![bg 20%](./images/git-logo.png)
 
@@ -65,13 +65,13 @@ _footer: ''
 
 ---
 
-## Disdvantages of Gitflow
+## Disadvantages of Gitflow
 
 - Complexity
   - Managing multiple branches can become complicated.
 
 - Long Living Branches
-  - Feature branches can diverge signifcantly, leading to merge conflicts.
+  - Feature branches can diverge significantly, leading to merge conflicts.
 
 - More Overhead.
   - Time consuming to review PR's and testing.
@@ -80,7 +80,7 @@ _footer: ''
 
 ## What is Trunk Based Development?
 
-- **Goal** - perform small incremental updates to minimise merge conflicts, and streamline the dev pipeline.
+- **Goal** - perform small incremental updates to minimize merge conflicts, and streamline the dev pipeline.
 
 - Developers collaborate frequently on a single shared branch: "**trunk**" or "**main**".
 
@@ -101,25 +101,24 @@ _footer: ''
 ## Benefits of Trunk Based Development
 
 - Continuous Integration (CI)
-  - Easier to integrate changes continiously.
+  - Easier to integrate changes continuously.
   - Promotes frequent and smaller releases.
 - Reduced marge conflicts
-  - Less branching means fewer conflicts to resolve.
+  - Less branching means fewer conflicts to resolve and less code to review.
 - Faster feedback loops.
   - Immediate feedback on changes.
 - Simplified Workflow:
   - No need to manage complex branching structures.
-  - Simplified Workflow:
   
 
 ---
 
 ## Disdvantages of Trunk Based Development
 
-- Requires Discpline
+- Requires Discipline
   - Developers must commit to working code frequently.
 - Risk of Breaking Changes
-  - Changes commited to the trunk can affect all devs.
+  - Changes committed to the trunk can affect all devs.
 - Not ideal for Large Teams
   - Scaling can be challenging in large and distributed teams.
 
@@ -190,9 +189,17 @@ Some interesting text
   - Use feature toggles to manage incomplete features
 
 - Feature-Based
-  - Keep branches short-lived to minimise divergence.
+  - Keep branches short-lived to minimize divergence.
   - Ensure thorough code reviews and testing before merging.
   - Regularly rebase feature branches on the main branch to reduce conflicts.
+
+---
+
+## Other Best Practices
+
+- Pair experienced developers with those new to a codebase.
+- Communication, Communication, Communication
+
 
 ---
 
