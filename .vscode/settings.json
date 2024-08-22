@@ -1,5 +1,6 @@
 {
     "markdown.marp.themes": [
         "https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/themes/moj.css"
-    ]
+    ],
+    "markdown.marp.enableHtml": true
 }

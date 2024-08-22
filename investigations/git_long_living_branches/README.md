@@ -23,7 +23,7 @@ _footer: ''
 
 -
 
-![bg left 50%](https://evaluationcanada.ca/client_assets/images/people_hold_arrow.png)
+![bg left:20% 100%](https://evaluationcanada.ca/client_assets/images/people_hold_arrow.png)
 
 ---
 
@@ -87,9 +87,9 @@ _footer: ''
 - Frequent commits to the trunk, often multiple times a day.
 
 - Short-lived branches are allowed, but are merged back to the **main** branch quickly.
-
+<br>
 ![w:230 h:100 - gitlogo](./images/git-logo.png)
-
+</br>
 ---
 
 ## Trunk Based Development Diagram
@@ -103,15 +103,14 @@ _footer: ''
 - Continuous Integration (CI)
   - Easier to integrate changes continiously.
   - Promotes frequent and smaller releases.
-
 - Reduced marge conflicts
   - Less branching means fewer conflicts to resolve.
-
 - Faster feedback loops.
   - Immediate feedback on changes.
-
 - Simplified Workflow:
   - No need to manage complex branching structures.
+  - Simplified Workflow:
+  
 
 ---
 
@@ -119,14 +118,38 @@ _footer: ''
 
 - Requires Discpline
   - Developers must commit to working code frequently.
-
 - Risk of Breaking Changes
   - Changes commited to the trunk can affect all devs.
-
 - Not ideal for Large Teams
   - Scaling can be challenging in large and distributed teams.
 
 ---
+
+## Splink - CASE Study
+
+<!-- _class: columns -->
+
+<div class="columns">
+
+<div>
+
+creating columns
+
+</div>
+
+<div>
+other interesting
+</div>
+
+<div>
+other interesting
+</div>
+
+
+</div>
+
+---
+
 ## Splink - CASE Study
 
 Some interesting text
@@ -139,26 +162,22 @@ Some interesting text
 
 ---
 
-## Splink - CASE Study
+
+## create-a-pipeline - Linting 
+
+- Refactor all of our linting tools.
+
+- Everyone was on different components, and it was a major change on how we approached linting in the codebase.
+
+---
+
+##  create-a-pipeline - Linting
 
 Some interesting text
 
 ---
 
-
-## create-a-pipeline - CASE Study
-
-Some interesting text
-
----
-
-## create-a-pipeline - CASE Study
-
-Some interesting text
-
----
-
-## create-a-pipeline - CASE Study
+## create-a-pipeline - Linting
 
 Some interesting text
 
@@ -177,9 +196,22 @@ Some interesting text
 
 ---
 
+## Strategies from the wild:
+
+- 
+
+
+- 
+
+---
+
+
 ## Questions?
 
-Some interesting text
+- What have people done before which has been successful?
+- What should be considered a long living branch? (*a few days, weeks? etc.*)
+  How long is too long? (*Month? Year?*)
+- Other strategies for managing long living branches.
 
 ---
 

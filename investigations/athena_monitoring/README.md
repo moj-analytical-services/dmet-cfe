@@ -10,9 +10,9 @@ _footer: ''
 
 <!-- _header: ![w:100](https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/images/moj.png) -->
 
-# [Monitoring Athena and Data Access](https://github.com/moj-analytical-services/dmet-cfe/tree/main/investigations/athena_monitoring)
+# [Monitoring Athena and Data Access](https://moj-analytical-services.github.io/dmet-cfe/athena_monitoring/)
 
-## Centre for Excellence
+## [![width:30](https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg)](https://github.com/moj-analytical-services/dmet-cfe/tree/main/investigations/athena_monitoring/) Centre for Excellence
 
 ##### July 2024 
 
@@ -74,20 +74,81 @@ section {
 
 # CloudWatch Demo
 
-### Athena Workgroup Metrics
+### Monitoring Athena Workgroups using CloudWatch Metrics
 
 ---
-## AWS CloudTrail
+<!-- _class: removeBoxShadow -->
+
+## [AWS CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html)
 #### Who did what on AWS? 
 
 ![CloudTrail Architecture w:850 center](https://miro.medium.com/v2/format:webp/1*ejnlSrZ4eT1_BZPzT0WycA.png)
+
+<!--  A web service that records AWS API calls for your account and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements returned by the AWS service. -->
+
+---
+<!-- _class: removeBoxShadow -->
+
+<style scoped>
+p {
+  font-size: 20px;
+}
+</style>
+
+## Recording / Querying CloudTrail events
+
+###### CloudTrail provides three ways to record and view activity in an AWS account:
+
+<div class="columns">
+
+<div>
+
+##### [Event history](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html)
+
+Automatically enabled by default.
+
+Allows you to view the last 90 days of management events in a Region.
+
+There are no CloudTrail charges for viewing the Event history.
+
+</div>
+
+<div>
+
+##### [CloudTrail Lake](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake.html)
+
+Events are aggregated into event data stores based on criteria.
+
+Can view the last 10 or 7 years of events across regions or accounts.
+
+Events can be queried using [CloudTrail Lake queries](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-queries.html).
+
+Data stores and queries incur charges. 
+
+</div>
+
+<div>
+
+##### [Trails](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html)
+
+Stores events in an S3 bucket & optionally to CloudWatch Logs.
+
+Events can be queried using [CloudWatch Logs Insight](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html) or Athena. 
+
+[Events are flattened](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax-Parse.html) which can be easier to query using Athena, especially if they contain arrays.
+
+Amazon S3 storage and querying incur  charges.
+
+</div>
+
+</div>
 
 ---
 <!-- _class: title -->
 
 # CloudTrail Demo
 
-### AWS Glue API and Athena API events
+### Monitoring AWS Glue API and Athena API events
 
 ---
 
@@ -108,9 +169,27 @@ section {
 
 ---
 
+<!-- _class: removeBoxShadow -->
+
+## Proposed Athena and Data Monitoring Architecture
+
 ![solution architecture](./images/athena_monitoring_solution_architecture.excalidraw.png)
 
 ---
+
+## Proposed Athena and Data Monitoring Architecture
+
+The architecture is split into three parts:
+
+1. **Monitor data access** using AWS Glue APIs, and aggregate/query using Athena. 
+This approach still needs to be evaluated because it relies on the undocumented BatchGetTable API.
+2. **Monitor Athena usage at the workgroup level** using CloudWatch metrics.
+
+3. **Monitor Athena usage at the user level** using various Athena APIs, and aggregate using CloudWatch Log.
+This approach still needs to be evaluated because of the cost incurred triggering an lambda function every time an Athena query is called. 
+
+---
+
 <!-- _class: columns -->
 
 ## Next Steps
@@ -119,37 +198,37 @@ section {
 
 <div>
 
-#### July
+#### 2024 Q3
 
-1. [Use workgroups for Airflow](#14)
-1. Add `GetQueryExecution` to CloudWatch
-1. Investigate `BatchGetTable`
+###### More investigations
+
+1. [Deploy workgroups for Airflow](#14)
 1. Collaborate with OP discovery
-1. OP to add Data and Analytics Engineers to data account
-1. OP to add Ireland CloudWatch metrics
+1. Colloborate with AWS on how to monitor data usage
 
 </div>
 
 <div>
 
-#### August
+#### 2024 Q4
+
+###### Cross-cutting monitoring
 
 1. Set up DMET monitoring working group?
+1. Deploy monitoring infrastructure 
 1. [Update dashboards](#15)
-1. OP to implement dashboard-as-code?
-1. Advertise dashboard with users?
-1. AP to terraform Lamdba and `GetQueryExecution` resources?
 
 </div>
 
 <div>
 
-#### September
+#### 2025 Q1
 
-1. Hand-over Athena monitoring to AP?
+###### Application monitoring
+
+1. Hand-over Athena and data monitoring to AP?
 1. Convert dashboards to code?
-1. Start create-a-derived-table monitoring workstream
-1. Refactor DMET applications to use [custom cloudwatch logs](#16)?
+1. Build monitoring for applications?
 
 </div>
 
@@ -165,9 +244,9 @@ section {
 
 1. Create `airflow-{folder}` workgroup using [`athena_workgroups.tf`](https://github.com/ministryofjustice/analytical-platform/blob/main/terraform/aws/analytical-platform-data-production/athena/athena-workgroups.tf)
 
-2. Add `mojap-athena-query-dump/{folder}` to Airflow role Athena `dump_bucket`
+2. Add `mojap-athena-query-dump/{folder}` to S3 `read_write` permissions on Airflow role 
 
-3. Add `"WR_WORKGROUP": "airflow-dev-workgroup"` to the env_vars dictionary that is passed to the Airflow task
+3. Add `"WR_WORKGROUP": "airflow-{folder}"` to the env_vars dictionary that is passed to the Airflow task
 
 4. That's it!
 
@@ -197,14 +276,3 @@ orange 1
 apple 2
 banana 1
 ```
-
----
-## [Marp](https://marp.app/) for Slides
-
-- This slide deck was created using [Marp](https://marp.app/) (Markdown Presentation Ecosystem).
-- Marp's format is based on [CommonMark](https://commonmark.org/), a consistent Markdown specification.
-- For those familiar with [LaTex](https://www.latex-project.org/), it's a way of separating formatting from text, and means you can save documents as code.
-- Marp comes with various in-built [themes](https://github.com/marp-team/marp-core/blob/main/themes/README.md).
-
-- I use the default theme, tweaking the color palette to match the [GOV.UK color palette](https://design-system.service.gov.uk/styles/colour/).
-- I've put some guidance on the [GitHub as a one-stop-shop](https://ministryofjustice.github.io/data-and-analytics-engineering/blog/posts/github-as-a-one-stop-shop/#slides) blog post (but hoping to run a workshop at some point if there's interest)
