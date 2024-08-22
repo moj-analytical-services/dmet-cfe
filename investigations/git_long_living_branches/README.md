@@ -29,7 +29,7 @@ _footer: ''
 
 ## What? - Long Living Feature Branches
 
-- **Goal** - 
+- **Goal** -
 
 - Feature based development ([GitFlow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow))
 
@@ -110,7 +110,6 @@ _footer: ''
 - Simplified Workflow:
   - No need to manage complex branching structures.
   - Simplified Workflow:
-  
 
 ---
 
@@ -125,45 +124,92 @@ _footer: ''
 
 ---
 
-## Splink - CASE Study
-
-<!-- _class: columns -->
-
-<div class="columns">
-
-<div>
-
-creating columns
-
-</div>
-
-<div>
-other interesting
-</div>
-
-<div>
-other interesting
-</div>
+<h2>
+  <img src="./images/splink-logo.png" alt="Splink Logo" style="width: 200px; vertical-align: middle; margin-right: 10px;">
+  CASE Study
+</h2>
 
 
-</div>
+#### **Background**
+
+In Autumn of 2023, we decided to undertake a **major refactor of Splink**. This refactor was a necessary step to help us improve the performance and maintainability of the library.
+
+However, for the first few months of this process, we had ongoing development in both versions 3 and 4. **This was due to**:
+
+- Team members were actively developing data linking pipeline features, all required in version 3.
+- There were ongoing features in version 3 that needed finalisation.
 
 ---
 
-## Splink - CASE Study
+<h2>
+  <img src="./images/splink-logo.png" alt="Splink Logo" style="width: 200px; vertical-align: middle; margin-right: 10px;">
+  The problem
+</h2>
 
-Some interesting text
+Initially, we were infrequently merging changes from the main branch into our development branch. This led to regular divergences between the two versions and we were constantly resolving relatively large **merge conflicts**.
+
+#### **This raised a question around version synchronisation:**
+- What's the best strategy for keeping the new version updated with changes from the main branch?
+
 
 ---
 
-## Splink - CASE Study
+<h2>
+  <img src="./images/splink-logo.png" alt="Splink Logo" style="width: 200px; vertical-align: middle; margin-right: 10px;">
+  A solution?
+</h2>
 
-Some interesting text
+
+- **GitHub Action creating merge branch on push to main**
+  - Automatically create a new merge branch (`main` -> `splink_4_dev`) on push to the main branch
+  - If no merge conflicts are detected, we could then create and merge the PR
+  - If conflicts were present, we then had earlier sight of them
+
+
+<br>
+
+This ensured `splink_4_dev` was consistently updated with changed from the main branch, with regular merge PRs replacing ad-hoc updates.
+
+---
+
+<h2>
+  <img src="./images/splink-logo.png" alt="Splink Logo" style="width: 200px; vertical-align: middle; margin-right: 10px;">
+  Findings from experiment - Pros
+</h2>
+
+### **Pros**
+
+- **Reduced manual intervention**: Eliminated the need for reminders or scheduling, ensuring continuous integration without extra effort.
+- **Reduced size of conflicts**: Reduced the potential for large merge conflicts. Particularly troublesome to resolve as multiple developers were working on the same codebase.
+
+---
+
+<h2>
+  <img src="./images/splink-logo.png" alt="Splink Logo" style="width: 200px; vertical-align: middle; margin-right: 10px;">
+  Findings from experiment - Cons
+</h2>
+
+### **Cons**
+
+- **Didn't solve all of our problems**: While it helped with synchronisation, it didn't fundamentally fix our issues with a divering codebase and stale code.
+    - Required the structure of each branch remain consistent, which was only feasible in early development.
+- **Overkill for our needs**: A simpler notification system might have been more appropriate and less faff to set up.
+
+---
+
+<h2>
+  <img src="./images/splink-logo.png" alt="Splink Logo" style="width: 200px; vertical-align: middle; margin-right: 10px;">
+  Case Study Summary
+</h2>
+
+Overall, this solution worked __acceptably__. The main benefit was in allowing us to quickly review if/where merge conflicts were occurring. We could then identify and resolve issues early on.
+
+However, it didn't fundamentally resolve a lot of the issues we were encountering with the branches steadily diverging. Later in development we decided to stop actively working on version 3, and focus on version 4.
 
 ---
 
 
-## create-a-pipeline - Linting 
+## create-a-pipeline - Linting
 
 - Refactor all of our linting tools.
 
@@ -198,10 +244,10 @@ Some interesting text
 
 ## Strategies from the wild:
 
-- 
+-
 
 
-- 
+-
 
 ---
 
@@ -224,11 +270,11 @@ Thanks!
 ## References
 
 List of references:
-    
+
 Trunk-Based Development - Atlassian
-    
+
 Trunk vs. Feature-Based Development - CircleCI
-    
+
 Git Workflow - Atlassian
 
 ---
