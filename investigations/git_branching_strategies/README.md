@@ -112,7 +112,7 @@ _footer: ''
   - Easier to integrate changes continuously.
   - Promotes frequent and smaller releases.
 
-- Reduced marge conflicts
+- Reduced merge conflicts
   - Less branching means fewer conflicts to resolve and less code to review.
 
 - Faster feedback loops.
