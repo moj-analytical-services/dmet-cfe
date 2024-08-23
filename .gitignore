@@ -1,0 +1,19 @@
+# pyenv
+.python-version
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+venv*/
+
+# ds store
+.DS_Store
+
+# exclude local html or pdf files created from marp export
+*.html
+*.pdf
