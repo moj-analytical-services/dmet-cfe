@@ -13,3 +13,7 @@ venv*/
 
 # ds store
 .DS_Store
+
+# exclude local html files created from marp expor .
+*.html
+*.pdf
