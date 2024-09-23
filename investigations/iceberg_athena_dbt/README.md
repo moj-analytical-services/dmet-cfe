@@ -14,7 +14,7 @@ _footer: ''
 
 <!-- _header: ![w:100](https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/images/moj.png) -->
 
-## Building a transaction data lake  using<br/> [Amazon Athena, Apache Iceberg and dbt](https://github.com/moj-analytical-services/dmet-cfe/iceberg_athena_dbt)
+## Building a transaction data lake  using<br/> [Amazon Athena, Apache Iceberg and dbt](https://moj-analytical-services.github.io/dmet-cfe/iceberg_athena_dbt)
 
 <br/>
 
