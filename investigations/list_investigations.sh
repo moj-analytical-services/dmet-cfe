@@ -1,9 +1,12 @@
 #!/bin/bash
 
-# Define the path to the README.md file
+# Define the path to the file
 output_file="investigations/investigations.md"
 
-# Start writing to the README.md file
+# Remove the description
+sed -i '' "/Updated at build time/d" "$output_file"
+
+# Start writing to the file
 echo "" >> "$output_file"
 
 # Loop through each folder in the investigations directory
