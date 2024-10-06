@@ -2,9 +2,7 @@
 
 The Centre for Excellence sets the technical direction for Data and Analytics Engineering. See the [mission statement](https://moj-analytical-services.github.io/dmet-cfe/) for how we do this.
 
-## Investigations
-
-This directory summarises investigations into new technologies, tools and approaches. 
+The Centre for Excellence also helps [investigate and document](https://moj-analytical-services.github.io/dmet-cfe/investigations.html) technologies, tools and approaches.
 
 ## Slides and [Marp](https://marp.app/)
 
@@ -14,5 +12,5 @@ This directory summarises investigations into new technologies, tools and approa
 - Marp comes with various in-built [themes](https://github.com/marp-team/marp-core/blob/main/themes/README.md).
 
 - The slides use the custom [MoJ Marp theme](https://github.com/ministryofjustice/marp-moj-theme).
-- The slides are published to GitHub pages using the `gh-deploy.yml`.
+- The slides are published to GitHub pages using `gh-deploy.yml`.
 - See [GitHub as a one-stop-shop](https://ministryofjustice.github.io/data-and-analytics-engineering/blog/posts/github-as-a-one-stop-shop/#slides) for some general guidance on using Marp.
