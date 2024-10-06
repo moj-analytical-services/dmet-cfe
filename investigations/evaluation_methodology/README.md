@@ -16,7 +16,7 @@ _footer: ''
 
 ## Centre for Excellence
 
-##### Data and Analytics Engineering
+##### Aug 2024
 
 ---
 <style scoped>
@@ -27,15 +27,19 @@ _footer: ''
 
 ## Why formalise tech stack changes?
 
-- Ensures all stakeholders are identified and informed
+- Comprehensive stakeholder engagement
 
-- Future-proof the solution
+- Future-Proofing solutions
 
-- Minimise misalignment & duplication across domains
+- Minimise misalignment and duplication
 
-- Speed up development
+- Accelerated development processes
 
-- Due diligence
+- Improved risk management
+
+- Rigorous due diligence
+
+- Better resource allocation
 
 ![bg left:40% 90%](https://evaluationcanada.ca/client_assets/images/people_hold_arrow.png)
 
