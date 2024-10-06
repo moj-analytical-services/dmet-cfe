@@ -30,9 +30,6 @@ jobs:
       - name: Get List of investigations
         run: sh ./investigations/list_investigations.sh 
 
-      - name: Ensure build dir exists
-        run: mkdir -p build
-
       - name: Copy investigations
         run: cp -r ./investigations ./build
 
