@@ -26,44 +26,33 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      
+
+      - name: Get List of investigations
+        run: sh ./investigations/list_investigations.sh 
+
       - name: Ensure build dir exists
         run: mkdir -p build
 
-      - name: Copy images directory (if exists)
-        run: if [[ -d mission_statement/images ]]; then cp -R mission_statement/images build/images; fi
+      - name: Copy investigations
+        run: cp -r ./investigations ./build
+
+      - name: Rename README.md to index.md
+        run: find ./build -type f -name "README.md" -execdir mv {} index.md \;
 
       - name: Download moj theme
         run: wget https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/themes/moj.css
+
+      - name: Marp Build (Investigations)
+        run: npx @marp-team/marp-cli@latest ./build --html --theme moj.css
+
+      - name: Copy mission statement images directory
+        run: cp -R mission_statement/images build/images
 
       - name: Marp Build (Mission statement)
         run: |
           npx @marp-team/marp-cli@latest mission_statement/README.md \
           -o build/index.html --theme moj.css --html
 
-      - name: Create directories (Investigations)
-        run: |
-          for directory in investigations/*/ ; do
-            mkdir -p build/$(basename $directory)
-          done
-
-      - name: Copy Images directory (Investigations)
-        run: |
-          for directory in investigations/*/ ; do
-            if [[ -d $directory/images ]]; 
-            then 
-              cp -R $directory/images build/$(basename $directory)/images;
-              echo "copied $directory/images"
-            fi
-          done
-
-      - name: Marp Build (Investigations)
-        run: |
-          for directory in investigations/*/ ; do
-            npx @marp-team/marp-cli@latest $directory/README.md \
-            -o build/$(basename $directory)/index.html --theme moj.css --html
-          done
-          
       - name: Setup Pages
         uses: actions/configure-pages@v5
         
