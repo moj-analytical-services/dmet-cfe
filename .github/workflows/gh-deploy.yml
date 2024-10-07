@@ -40,14 +40,14 @@ jobs:
         run: wget https://raw.githubusercontent.com/ministryofjustice/marp-moj-theme/main/themes/moj.css
 
       - name: Marp Build (Investigations)
-        run: npx @marp-team/marp-cli@latest ./build --html --theme moj.css
+        run: npx @marp-team/marp-cli@3.4.0 ./build --html --theme moj.css
 
       - name: Copy mission statement images directory
         run: cp -R mission_statement/images build/images
 
       - name: Marp Build (Mission statement)
         run: |
-          npx @marp-team/marp-cli@latest mission_statement/README.md \
+          npx @marp-team/marp-cli@3.4.0 mission_statement/README.md \
           -o build/index.html --theme moj.css --html
 
       - name: Setup Pages
